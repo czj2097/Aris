@@ -252,7 +252,9 @@ namespace aris
 			std::int32_t pos() { std::int32_t pos; pFather->readPdo(1, 0, pos); return pos + pos_offset_; };
 			std::int32_t vel() { std::int32_t vel; pFather->readPdo(1, 2, vel); return vel; };
 			std::int32_t cur() { std::int16_t cur; pFather->readPdo(2, 0, cur); return cur; };
-		
+            std::uint32_t dgi() { std::uint32_t dgi; pFather->readPdo(1, 1, dgi); return dgi; };
+
+
 			std::int32_t input2count_;
 			std::int32_t home_count_;
 			std::int32_t max_pos_count_;
@@ -352,6 +354,7 @@ namespace aris
 			data.feedback_cur = imp_->cur();
 			data.feedback_pos = imp_->pos();
 			data.feedback_vel = imp_->vel();
+            data.feedback_dgi = imp_->dgi();
 		}
 		auto EthercatMotion::hasFault()->bool
 		{

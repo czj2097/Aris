@@ -36,6 +36,7 @@ namespace aris
 				std::int16_t target_cur{ 0 }, feedback_cur{ 0 };
 				std::uint8_t cmd{ IDLE };
 				std::uint8_t mode{ POSITION };
+                std::int32_t feedback_dgi{0};
 				mutable std::int16_t ret{ 0 };
 			};
 
